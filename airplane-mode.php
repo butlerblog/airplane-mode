@@ -5,7 +5,7 @@
  * Description: Control loading of external files when developing locally
  * Author: Andrew Norcross
  * Author URI: http://andrewnorcross.com/
- * Version: 0.2.4
+ * Version: 0.2.5
  * Text Domain: airplane-mode
  * Requires WP: 4.4
  * Domain Path: languages
@@ -49,7 +49,7 @@ if ( ! defined( 'AIRMDE_DIR' ) ) {
 
 // Set our version if not already defined.
 if ( ! defined( 'AIRMDE_VER' ) ) {
-	define( 'AIRMDE_VER', '0.2.4' );
+	define( 'AIRMDE_VER', '0.2.5' );
 }
 
 // Load our WP-CLI helper if that is defined and available.
@@ -725,7 +725,7 @@ if ( ! class_exists( 'Airplane_Mode_Core' ) ) {
 			$link = wp_nonce_url( add_query_arg( 'airplane-mode', $toggle ), 'airmde_nonce', 'airmde_nonce' );
 
 			// Now add the admin bar link.
-			$wp_admin_bar->add_menu(
+			$wp_admin_bar->add_node(
 				array(
 					'id'        => 'airplane-mode-toggle',
 					'title'     => '<span class="ab-icon"></span>' . $label,
